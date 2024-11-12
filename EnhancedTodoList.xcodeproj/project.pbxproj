@@ -16,21 +16,6 @@
 			path = EnhancedTodoList;
 			sourceTree = "<group>";
 		};
-		C137635A2CE3BB5400E8FE4D /* Models */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Models;
-			sourceTree = "<group>";
-		};
-		C137635B2CE3BB5E00E8FE4D /* Views  */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Views ";
-			sourceTree = "<group>";
-		};
-		C137635F2CE3BBE000E8FE4D /* Preview Content */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,9 +33,6 @@
 			isa = PBXGroup;
 			children = (
 				C13763462CE3BB0200E8FE4D /* EnhancedTodoList */,
-				C137635A2CE3BB5400E8FE4D /* Models */,
-				C137635B2CE3BB5E00E8FE4D /* Views  */,
-				C137635F2CE3BBE000E8FE4D /* Preview Content */,
 				C13763452CE3BB0200E8FE4D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,9 +62,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				C13763462CE3BB0200E8FE4D /* EnhancedTodoList */,
-				C137635A2CE3BB5400E8FE4D /* Models */,
-				C137635B2CE3BB5E00E8FE4D /* Views  */,
-				C137635F2CE3BBE000E8FE4D /* Preview Content */,
 			);
 			name = EnhancedTodoList;
 			packageProductDependencies = (
