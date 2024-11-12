@@ -11,11 +11,23 @@ struct TodoListView: View {
     
     // MARK: Stored properties
     
+    //state for text
+    @State private var searchText = ""
+    
     // The item currently being created
     @State private var newItemDetails = ""
     
     // Our list of items to complete
     @State private var items: [TodoItem] = []
+    
+    // filter items for search text
+       var filteredItems: [TodoItem] {
+           if searchText.isEmpty {
+               return items
+           } else {
+               return items.filter { $0.details.lowercased().contains(searchText.lowercased()) }
+           }
+       }
     
     // MARK: Computed properties
     var body: some View {
@@ -60,8 +72,10 @@ struct TodoListView: View {
                         .onDelete(perform: removeRows)
                     }
                 }
+                
             }
             .navigationTitle("Tasks")
+            .searchable(text: $searchText)
             
         }
         .onAppear {
