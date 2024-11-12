@@ -29,7 +29,7 @@ struct TodoListView: View {
                     Button("Add") {
                         addItem()
                     }
-                 
+                    
                 }
                 .padding(20)
                 
@@ -46,30 +46,32 @@ struct TodoListView: View {
                     })
                     
                 } else {
-                    
-                    List(items) { currentItem in
-                        Label {
-                            Text(currentItem.details)
-                        } icon: {
-                            Image(systemName: currentItem.isCompleted ? "checkmark.circle" : "circle")
-                                .onTapGesture {
-                                    toggle(item: currentItem)
-                                }
+                    List {
+                        ForEach(items,id: \.id) { currentItem in
+                            Label {
+                                Text(currentItem.details)
+                            } icon: {
+                                Image(systemName: currentItem.isCompleted ? "checkmark.circle" : "circle")
+                                    .onTapGesture {
+                                        toggle(item: currentItem)
+                                    }
+                            }
                         }
+                        .onDelete(perform: removeRows)
                     }
-                    
                 }
             }
             .navigationTitle("Tasks")
+            
         }
         .onAppear {
             // Populate with example data
             if items.isEmpty {
-//                items.append(contentsOf: exampleData)
+                items.append(contentsOf: exampleData)
             }
         }
     }
- 
+    
     // MARK: Functions
     func addItem() {
         let newToDoItem = TodoItem(details: newItemDetails)
@@ -86,6 +88,11 @@ struct TodoListView: View {
             item.isCompleted = true
         }
         
+    }
+    
+    //delete rows
+    func removeRows(at offsets: IndexSet) {
+        items.remove(atOffsets: offsets)
     }
 }
 
